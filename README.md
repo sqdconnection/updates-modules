@@ -1,32 +1,46 @@
-# updates-modules
+# IfwShield
 
-Sumber update otomatis untuk modul Magisk / KernelSU / APatch. Repo ini hanya berisi
-berkas publik (`update.json`, changelog, dan zip rilis). Kode sumber tidak ada di sini.
+Memblokir layanan/aktivitas zygote lewat IntentFirewall dan menyembunyikan aplikasi dari
+aplikasi lain lewat hook di `system_server`, berjalan sebagai modul Zygisk.
 
-## Mengunduh modul
+> Repo ini hanya berisi dokumentasi dan sumber update (`update.json`). Berkas modul ada di
+> **[Releases](../../releases)**.
 
-Buka halaman **[Releases](../../releases)**, pilih rilis terbaru, lalu unduh berkas di bagian
-**Assets** bernama `IfwShield-Zygisk-vX.Y.Z.zip`.
+## Persyaratan
 
-> **Jangan** pilih *Source code (zip)* atau *Source code (tar.gz)*. Itu hanya isi repo ini
-> (`update.json` dan changelog), **bukan** modul, sehingga pemasangan di Magisk akan gagal.
+### Umum
 
-Pasang lewat Magisk: **Modul → Pasang dari penyimpanan → pilih zip → reboot**.
++ Android 10+ untuk blokir Layanan & Aktivitas, Android 11+ untuk Sembunyikan
++ Zygisk aktif (ZygiskNext atau Zygisk bawaan Magisk)
++ ABI arm64-v8a, armeabi-v7a, x86, atau x86_64
 
-## Pengguna Safari
+### Magisk
 
-Safari secara bawaan membuka zip otomatis menjadi folder, sehingga zip-nya hilang.
-Matikan: **Safari → Settings → General → hilangkan centang "Open 'safe' files after
-downloading"**, atau unduh memakai browser lain.
++ Pasang lewat **Modul → Pasang dari penyimpanan**
++ Magisk Alpha diuji bersama ZygiskNext 1.5.3
 
-## Update lewat Magisk
+### KernelSU / APatch
 
-Modul IfwShield v1.5.15 ke atas memeriksa update sendiri. Buka tab **Modul** di Magisk,
-tarik layar ke bawah, lalu tekan **Perbarui** pada kartu IfwShield.
++ Pasang lewat manajer modul masing-masing
 
-## Isi
+## Mengunduh
 
-| Jalur | Fungsi |
-|---|---|
-| `ifwshield/update.json` | Dibaca Magisk untuk mendeteksi versi baru |
-| `ifwshield/CHANGELOG.md` | Catatan perubahan yang tampil di dialog update |
+Ambil `IfwShield-Zygisk-vX.Y.Z.zip` dari bagian **Assets** pada halaman
+[Releases](../../releases).
+
+> **Jangan** memilih *Source code (zip)* atau *Source code (tar.gz)*. Itu hanya isi repo ini
+> (dokumentasi dan `update.json`), **bukan** modul.
+>
+> Safari secara bawaan mengekstrak zip menjadi folder. Matikan **Safari → Settings → General →
+> "Open 'safe' files after downloading"**, atau gunakan browser lain.
+
+## Update
+
+Mulai v1.5.15, modul memeriksa update sendiri. Buka tab **Modul** di Magisk, tarik layar ke
+bawah, lalu tekan **Perbarui** pada kartu IfwShield.
+
+## Dokumentasi
+
++ [Fitur dan cara pakai](docs/ifwshield.md)
++ [Pemecahan masalah](docs/troubleshooting.md)
++ [Catatan perubahan](ifwshield/CHANGELOG.md)
