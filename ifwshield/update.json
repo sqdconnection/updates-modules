@@ -1,6 +1,6 @@
 {
-  "version": "v1.5.15",
-  "versionCode": 29,
-  "zipUrl": "https://github.com/sqdconnection/updates-modules/releases/download/ifwshield-v1.5.15/IfwShield-Zygisk-v1.5.15.zip",
+  "version": "v1.5.17",
+  "versionCode": 31,
+  "zipUrl": "https://github.com/sqdconnection/updates-modules/releases/download/ifwshield-v1.5.17/IfwShield-Zygisk-v1.5.17.zip",
   "changelog": "https://raw.githubusercontent.com/sqdconnection/updates-modules/core/ifwshield/CHANGELOG.md"
 }

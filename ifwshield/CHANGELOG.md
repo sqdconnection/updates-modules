@@ -1,12 +1,28 @@
 # Changelog
 
+## v1.5.17
+
+### Added
+- **Mode Buta: "Terhubung App Lokal" per-app.** Saat sebuah app di-ON-kan Mode
+  Buta, kartunya bisa dibuka untuk memilih app lokal mana yang **tetap boleh
+  dilihat** app itu (pengecualian, selain dirinya + app sistem). Disimpan
+  langsung (`ifwctl whitelist-allow-map-set` + `hide-inject`), tanpa reboot.
+  Store baru `whitelist_allow.map`; `config.json` kini mengisi `whitelistAllow`
+  dan `hide-status` melaporkannya. Reset WebUI ikut mengosongkannya.
+
+### Fixed
+- **Hitungan Opsi Pengembang / Mode Buta tak sinkron** (mis. "pilih 2 tertulis
+  3"): app yang sudah di-uninstall masih tersimpan di daftar. Kini dibuang
+  otomatis saat WebUI dimuat.
+
 ## v1.5.15
 
 ### Changed
 - **Sumber update dipindah** ke repo publik khusus `sqdconnection/updates-modules`
   (hanya `update.json`, changelog, dan zip rilis; kode sumber tetap private).
-  `updateJson` di `module.prop` kini menunjuk ke sana. Modul v1.5.14 yang masih
-  menunjuk repo lama tetap menemukan update ini lewat jembatan di repo lama.
+  `updateJson` di `module.prop` kini menunjuk ke sana. Repo lama
+  `ifw-hide-assets` kembali khusus banner; modul v1.5.14 yang masih menunjuk ke
+  sana tidak lagi menerima update otomatis (pasang v1.5.15 manual sekali).
 
 ## v1.5.14
 
